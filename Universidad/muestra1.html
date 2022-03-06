@@ -1,0 +1,126 @@
+
+
+<!---->
+!DOCTYPE html>
+
+<html>
+    <style type="text/css">
+        .backimg{
+            background: url(diente.jpg);
+            width:70%;
+            height: 530px;
+        }
+    </style>
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--Esta parte es para que en vez de que se muestre la direccion 127.0.0.1:8000 muestre los nombres de las paginas-->
+        <title>{%block title%} {%endblock%}</title>
+        <!--Para la PLANTILLAS BOOTSTRAP SE COPIA EL CSS, Y SEPARATE, ANTES DE CERRAR EL BODY DE LA PAG. GETBOOTSTRAP-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!--Para importar el css-->
+        <link rel "stylesheet" href="{% static 'css/gestionCursos.css' %}">
+    </head>
+    <body>
+        <!--La plantilla navbar de BOOTSTRAP es para el PANEL DE CONTROL-->
+        <!--bg viene de background osea fondo se reemplaza bg-ligth -> bg-info-->
+        <section id="header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container">
+                    <a href="#" class="navbar-brand">Logo</a>
+                    <button class="navbar-toggler" type="button" data-target="navbarSupportedContent" datatoggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+                    
+                    <span class="navbar-toggle-icon"></span>
+                    </buton>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto" >
+                            <li  class="nav-item active">
+                            <a  href="#" class="nav-link" aria-current="page">Inicio</a>
+                            </li>
+                            <li  class="nav-item ">
+                                <a  href="#" class="nav-link" aria-current="page">Contactos</a>
+                                </li>
+                            <li  class="nav-item">
+                                <a  href="#" class="nav-link" aria-current="page">SOCIAL</a>
+                                </li>
+
+                        </ul>
+
+                    </div>
+                    
+                </nav>
+            </div>
+        </section>   
+        
+        
+
+{% comment %} 
+
+        <!--es AQUI-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Universidad</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#">Contactos</a>
+                        <a class="nav-link disabled">Modulo</a>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>   {% endcomment %}
+
+{% comment %} 
+        <!-- Full Page Intro -->
+        <div class="view" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/architecture.webp'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-gradient align-items-center"> {% endcomment %}
+
+{% comment %} <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+        
+            <div class="mask" style="background-color: rgba(178, 60, 253, 0.6);">
+            <!--para el sobrefondo degradado-->
+                <div class="d-flex justify-content-center align-items-center h-100">
+                
+                </div>   {% endcomment %}
+
+                
+{% comment %} <!-- Background image -->
+<div
+class="bg-image"
+style="
+  background-image: url('https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp');
+  height: 100vh;
+"
+></div>
+<!-- Background image --> {% endcomment %}
+
+<!--Se coloca en un bloque div para mejorar diseño del contenido-->
+<!--py es pading son los espacios entre una y otra fila-->
+        <div class= "container py-4">
+            <!--ESTE ES EL BLOQUE DE CONTENIDOS, OSEA TODOS LOS TEMPLATES SE MUESTRAN AQUI SEGUN LA FUNCION QUE TIENE-->
+            <!--Se copia de html anterior pero se borra lo que esta en el body y se reemplaza por un block body-->
+            {%block body%}
+
+            {%endblock%}
+            
+        </div>  
+
+        <!--separate es de la pg de BOOTSTRAP ESTO ES JAVASCRIPT DEBE ESTAR ANTES DE CERRAR EL BODY-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        
+        <!--para que lea el js que fue creado-->
+        <script src="{% static 'js/gestionCursos.js' %}"></script>
+        <!--Alerta de SWEETALERT CDN-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>
